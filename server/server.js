@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const bodyparser = require('body-parser');
 const dotenv = require('dotenv');
 
 const app = require('./app');

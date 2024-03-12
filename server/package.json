@@ -4,7 +4,7 @@
   "description": "Backend of Events on calendar app",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
   },
   "author": "govind-asawa",
   "license": "ISC",
@@ -13,6 +13,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.18.3",
     "moment": "^2.30.1",
-    "mongoose": "^8.2.1"
+    "mongoose": "^8.2.1",
+    "nodemon": "^3.1.0"
   }
 }
