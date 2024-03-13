@@ -9,8 +9,7 @@ export default function AddEventModal({ isOpen, closeModal, onEventAdded }) {
 
   const onSubmit = (e) => {
     e.preventDefault();
-
-    console.log('called');
+    
     onEventAdded({
       title,
       start,

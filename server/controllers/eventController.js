@@ -14,10 +14,10 @@ router
     });
   })
   .post(async (req, res) => {
-    const obj = { ...req };
+    const obj = { ...req.body };
     const eventObj = await Event.createEvent(obj);
 
-    res.status(201);
+    res.sendStatus(201);
   });
 
 module.exports = router;
