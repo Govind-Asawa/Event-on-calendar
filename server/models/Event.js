@@ -5,8 +5,9 @@ const moment = require('moment');
 const EventSchema = mongoose.Schema({
   title: String,
   description: String,
-  startDate: Date,
-  endDate: Date,
+  start: Date,
+  end: Date,
+  backgroundColor: String,
 });
 
 const Event = mongoose.model('Event', EventSchema);
@@ -15,10 +16,11 @@ exports.createEvent = async (obj) => {
   return await Event.create(obj);
 };
 
-exports.getAllEvents = async () => {
+exports.getAllEvents = async (query) => {
+  const {start, end} = query;
   const events = await Event.find({
-    startDate: { $gte: moment(req.query.startDate).toDate() },
-    endDate: { $lte: moment(req.query.endDate).toDate() },
+    start: { $gte: moment(start).toDate() },
+    end: { $lte: moment(end).toDate() },
   });
 
   return events;

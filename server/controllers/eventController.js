@@ -7,8 +7,8 @@ const router = express.Router();
 router
   .route('/')
   .get(async (req, res) => {
-    const events = await Event.getAllEvents();
-    res.send(200).json({
+    const events = await Event.getAllEvents(req.query);
+    res.status(200).json({
       message: 'ok',
       events,
     });
