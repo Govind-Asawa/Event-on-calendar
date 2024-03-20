@@ -11,7 +11,7 @@ router
     res.status(200).json({
       message: 'ok',
       events,
-    });
+    })
   })
   .post(async (req, res) => {
     const obj = { ...req.body };
